@@ -9,15 +9,35 @@
 <body>
     <header>
         <a href="/#FFF">white</a>
-        <a href="/#334">blue-grey</a>
         <a href="/#000">black</a>
+        <a href="/#334">blue-grey</a>
+        <a href="/#stripes">stripes</a>
     </header>
+    <main>
+
+    </main>
 </body>
 
 <script>
     $(window).on('hashchange', (e) => {
         var hash = window.location.hash;
-        $('body').css('background-color', hash);
+
+        $('main').html('');
+
+        if (hash === '#stripes') {
+            const stripe = `<div></div><div></div>`;
+
+            var stripes = '';
+
+            for (let i = 0; i < 25; i++) {
+                stripes += stripe;
+            }
+
+            $('body').css('background-color', '#FFF');
+            $('main').html(stripes);
+        } else {
+            $('body').css('background-color', hash);
+        }
     });
 </script>
 <style>
@@ -38,6 +58,16 @@
             padding: 0.6em 1em;
             color: #334;
             background-color: #FFF;
+        }
+    }
+
+    main {
+        div {
+            height: 240px;
+        }
+
+        div:nth-child(even) {
+            background-color: #242424;
         }
     }
 </style>
