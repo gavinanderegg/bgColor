@@ -3,17 +3,42 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-
-    </style>
+    <script src="./jquery.min.js"></script>
 </head>
 
 <body>
-    <ul>
-        <li><a href="./light.html">LIGHT</a></li>
-        <li><a href="./dark.html">DARK</a></li>
-        <li><a href="https://bsky.app/profile/did:plc:kmeoup7vs37oby2a77nu6yk4/post/3mcunjss47s2e">Video</a></li>
-    </ul>
+    <header>
+        <a href="/#FFF">white</a>
+        <a href="/#334">blue-grey</a>
+        <a href="/#000">black</a>
+    </header>
 </body>
 
+<script>
+    $(window).on('hashchange', (e) => {
+        var hash = window.location.hash;
+        $('body').css('background-color', hash);
+    });
+</script>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        font-family: sans-serif;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        a {
+            display: block;
+            text-align: center;
+            padding: 0.6em 1em;
+            color: #334;
+            background-color: #FFF;
+        }
+    }
+</style>
 </html>
