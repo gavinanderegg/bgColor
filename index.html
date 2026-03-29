@@ -12,6 +12,7 @@
         <a href="./#000">black</a>
         <a href="./#334">blue-grey</a>
         <a href="./#stripes">stripes</a>
+        <a href="./#fringe">fringe</a>
     </header>
     <main>
 
@@ -25,7 +26,7 @@
         $('main').html('');
 
         if (hash === '#stripes') {
-            const stripe = `<div></div><div></div>`;
+            const stripe = `<div class="stripe"></div><div class="stripe"></div>`;
 
             var stripes = '';
 
@@ -35,6 +36,17 @@
 
             $('body').css('background-color', '#FFF');
             $('main').html(stripes);
+        } else if (hash === '#fringe') {
+            const content = `<div class="fringe"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fringilla, nunc vitae auctor laoreet, ipsum eros dictum nibh, ac molestie sem justo nec est. Mauris at lectus in nunc vehicula rhoncus. Vivamus id nibh non eros fringilla congue nec a urna. Ut volutpat facilisis nisi sed ornare. Pellentesque nibh ante, sollicitudin ut elementum eget, rutrum eu lacus. Proin hendrerit eu felis sed sollicitudin. Vestibulum finibus blandit fringilla. Vestibulum eu sagittis nibh, ac interdum magna. Cras sed volutpat augue. Cras nec enim vel felis ultrices sollicitudin. Pellentesque eleifend mauris et purus aliquet dictum. Proin sit amet sapien enim.</p></div>`;
+
+            var main = '';
+
+            for (let i = 0; i < 25; i++) {
+                main += content;
+            }
+
+            $('body').css('background-color', '#FFF');
+            $('main').html(main);
         } else {
             $('body').css('background-color', hash);
         }
@@ -42,12 +54,12 @@
 </script>
 <style>
     * {
+        font-family: sans-serif;
         margin: 0;
         padding: 0;
     }
 
     header {
-        font-family: sans-serif;
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -64,12 +76,22 @@
     main {
         min-height: 5800px;
 
-        div {
+        div.stripe {
             height: 240px;
         }
 
-        div:nth-child(even) {
+        div.stripe:nth-child(even) {
             background-color: #242424;
+        }
+
+        div.fringe {
+            background-color: #242424;
+            color: #EEE;
+
+            p {
+                padding: 2em 4em;
+                font-size: 24px;
+            }
         }
     }
 </style>
