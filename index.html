@@ -20,7 +20,7 @@
 </body>
 
 <script>
-    $(window).on('hashchange', (e) => {
+    $(window).on('hashchange load', (e) => {
         var hash = window.location.hash;
 
         $('main').html('');
